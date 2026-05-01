@@ -11,7 +11,7 @@ import { BsPencilFill } from "react-icons/bs";
 
 const Profile = () => {
   return (
-    <Container className="py-5 text-white" style={{ maxWidth: "800px" }}>
+    <Container className="my-5 py-5 text-white" style={{ maxWidth: "800px" }}>
       <Row className="mb-4">
         <Col className="border-bottom border-secondary border-2 pb-2">
           <h1 className="display-2 fw-bold">Edit Profile</h1>
