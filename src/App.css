@@ -1,0 +1,28 @@
+.carousel,
+.carousel-inner,
+.carousel-item {
+  overflow: visible !important;
+}
+
+/* La card intera */
+.movie-card-container {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.movie-card-container:hover {
+  transform: scale(1.4);
+  z-index: 5;
+}
+
+.movie-card-container img {
+  border-radius: 4px;
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 0.4s ease;
+}
+
+.movie-card-container:hover img {
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.8);
+}

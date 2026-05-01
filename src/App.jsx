@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 
+// ho integrato la navigazione tra pagine studiandomelo
+
 function App() {
   return (
     <BrowserRouter>

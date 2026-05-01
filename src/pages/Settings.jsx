@@ -141,7 +141,9 @@ const Settings = () => {
         <Col md={8}>
           <div className="d-flex justify-content-between align-items-center mb-3">
             <div className="d-flex align-items-center">
-              <Image src="/avatar.png" width={35} className="rounded me-2" />
+              <Link to="/Profile">
+                <Image src="/avatar.png" width={35} className="rounded me-2" />
+              </Link>
               <span className="fw-bold">Strive Student</span>
             </div>
             <div>
