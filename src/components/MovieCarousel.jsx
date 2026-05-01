@@ -2,14 +2,11 @@ import { Component } from "react";
 import { Carousel, Row, Col, Container, Spinner } from "react-bootstrap";
 
 class MovieCarousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movieChunks: [],
-      loading: true,
-      error: null,
-    };
-  }
+  state = {
+    moviePoster: [],
+    loading: true,
+    error: null,
+  };
 
   componentDidMount() {
     this.fetchMovies();
@@ -22,11 +19,11 @@ class MovieCarousel extends Component {
   }
 
   chunkArray = (array, size) => {
-    const chunks = [];
+    const Poster = [];
     for (let i = 0; i < array.length; i += size) {
-      chunks.push(array.slice(i, i + size));
+      Poster.push(array.slice(i, i + size));
     }
-    return chunks;
+    return Poster;
   };
 
   fetchMovies = () => {
@@ -40,19 +37,19 @@ class MovieCarousel extends Component {
           const cleanMovies = data.Search.filter(
             (movie) => movie.Poster && movie.Poster.startsWith("http"),
           );
-          const chunks = this.chunkArray(cleanMovies, 6);
-          this.setState({ movieChunks: chunks, loading: false });
+          const Poster = this.chunkArray(cleanMovies, 6);
+          this.setState({ moviePoster: Poster, loading: false });
         } else {
-          this.setState({ movieChunks: [], loading: false });
+          this.setState({ moviePoster: [], loading: false });
         }
       })
       .catch((err) => this.setState({ error: err.message, loading: false }));
   };
 
   render() {
-    const { movieChunks, loading, error } = this.state;
+    const { moviePoster, loading, error } = this.state;
 
-    if (loading)
+    if (loading) {
       return (
         <Spinner
           animation="border"
@@ -60,16 +57,18 @@ class MovieCarousel extends Component {
           className="d-block mx-auto my-5"
         />
       );
-    if (error) return <p className="text-center my-5">{error}</p>;
+    }
+
+    if (error) return <p className="text-center my-5 text-light">{error}</p>;
 
     return (
       <Container fluid className="py-4 bg-transparent">
-        <h2 className="mb-4 ps-5 fw-bold text-capitalize text-light">
+        <h2 className="mb-4 fw-bold text-capitalize text-light">
           {this.props.searchQuery}
         </h2>
 
         <Carousel indicators={false} interval={null} className="px-5">
-          {movieChunks.map((chunk, index) => (
+          {moviePoster.map((chunk, index) => (
             <Carousel.Item key={index}>
               <Row className="gx-3">
                 {chunk.map((movie) => (

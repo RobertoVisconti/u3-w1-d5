@@ -1,4 +1,5 @@
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import {
   Search,
@@ -20,7 +21,7 @@ const MyNavbar = () => {
       data-bs-theme="dark"
     >
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand as={Link} to="/">
           <img
             src="/netflix_logo.png"
             alt="Netflix Logo"
@@ -34,7 +35,7 @@ const MyNavbar = () => {
         <Navbar.Collapse id="navbarSupportedContent">
           {/* Menu Principale (Sinistra) */}
           <Nav className="me-auto mb-2 mb-lg-0">
-            <Nav.Link href="#" className="text-white fw-bold">
+            <Nav.Link as={Link} to="/" className="text-white fw-bold">
               Home
             </Nav.Link>
             <Nav.Link href="#" className="text-white">
@@ -102,9 +103,9 @@ const MyNavbar = () => {
                 />
                 <span>Kids</span>
               </NavDropdown.Item>
-
               <NavDropdown.Item
-                href="./profile.html"
+                as={Link}
+                to="/profile"
                 className="d-flex align-items-center"
               >
                 <Pencil className="me-2" size={16} />
@@ -122,7 +123,8 @@ const MyNavbar = () => {
               </NavDropdown.Item>
 
               <NavDropdown.Item
-                href="./settings.html"
+                as={Link}
+                to="/settings"
                 className="d-flex align-items-center"
               >
                 <Gear className="me-2" size={16} />
