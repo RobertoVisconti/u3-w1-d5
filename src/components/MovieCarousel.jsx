@@ -8,6 +8,7 @@ import {
   Modal,
   Button,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class MovieCarousel extends Component {
   state = {
@@ -102,17 +103,19 @@ class MovieCarousel extends Component {
                 {chunk.map((movie) => (
                   <Col key={movie.imdbID} xs={6} md={4} lg={2} className="py-2">
                     <div className="movie-card-container">
-                      <img
-                        src={movie.Poster}
-                        alt={movie.Title}
-                        className="img-fluid"
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          aspectRatio: "2/3",
-                          objectFit: "cover",
-                        }}
-                      />
+                      <Link to={`/movie/${movie.imdbID}`}>
+                        <img
+                          src={movie.Poster}
+                          alt={movie.Title}
+                          className="img-fluid"
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            aspectRatio: "2/3",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Link>
                     </div>
                   </Col>
                 ))}

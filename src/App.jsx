@@ -5,6 +5,7 @@ import MyNavbar from "./components/MyNavbar";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import MovieDetails from "./components/MovieDetails";
 
 // ho integrato la navigazione tra pagine studiandomelo
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/movie/:movieId" element={<MovieDetails />} />
           </Routes>
         </main>
         <footer>

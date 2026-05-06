@@ -7,8 +7,9 @@ const Home = () => {
       <VideoHeroSection />
       <MovieCarousel searchQuery="Harry Potter" />
       <MovieCarousel searchQuery="Jujutsu kaisen" />
+      <MovieCarousel searchQuery="One Piece" />
+      <MovieCarousel searchQuery="Naruto" />
       <MovieCarousel searchQuery="Iron Man" />
-      <MovieCarousel searchQuery="Marvel" />
       <MovieCarousel searchQuery="Pokemon" />
       <MovieCarousel searchQuery="The twilight saga" />
       <MovieCarousel searchQuery="Star Wars" />
